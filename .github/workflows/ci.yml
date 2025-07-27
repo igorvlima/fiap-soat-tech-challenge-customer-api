@@ -34,7 +34,7 @@ jobs:
         run: |
           envsubst < k8s/app-deployment-template.yaml > k8s/app-deployment.yaml
 
-      - name: Deploy to EKS
+      - name: Deploy to EKS Cluster
         run: |
           kubectl apply -f k8s/app-deployment.yaml
           kubectl apply -f k8s/app-service.yaml
