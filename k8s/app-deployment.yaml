@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: customer-api
-          image: igorvlima/customer_api:1.0.1
+          image: igorvlima/customer_api:1.0.0
           ports:
             - containerPort: 8080
           env:
