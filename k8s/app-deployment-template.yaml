@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: customer-api
+  labels:
+    app: customer-api
 spec:
   replicas: 2
   selector:
@@ -14,7 +16,7 @@ spec:
     spec:
       containers:
         - name: customer-api
-          image: igorvlima/customer_api:1.0.1
+          image:  igorvlima/customer_api:1.0.1
           ports:
             - containerPort: 8080
           env:
