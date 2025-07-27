@@ -46,6 +46,7 @@ sonar {
 		property "sonar.projectKey", "igorvlima_fiap-soat-tech-challenge-customer-api"
 		property "sonar.organization", "igorvlima"
 		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
 	}
 }
 
