@@ -40,7 +40,6 @@ class CustomerMapperTest {
     @Test
     void jpaToDomain_ShouldReturnNull_WhenEntityIsNull() {
         Customer result = mapper.jpaToDomain(null);
-
         assertNull(result);
     }
 
@@ -63,7 +62,6 @@ class CustomerMapperTest {
     @Test
     void DTOtoDomain_ShouldReturnNull_WhenDTOIsNull() {
         Customer result = mapper.DTOtoDomain(null);
-
         assertNull(result);
     }
 
@@ -86,7 +84,6 @@ class CustomerMapperTest {
     @Test
     void domainToDTO_ShouldReturnNull_WhenCustomerIsNull() {
         CustomerDTO result = mapper.domainToDTO(null);
-
         assertNull(result);
     }
 }
