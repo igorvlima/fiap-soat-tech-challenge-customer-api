@@ -24,24 +24,24 @@ public class CustomerServiceImpl implements CustomerUseCase {
     }
 
     @Override
-    //@Cacheable(value = "customer", key = "#id")
+    @Cacheable(value = "customer", key = "#id")
     public CustomerDTO findCustomerById(Long id) {
         var customer = customerRepository.findById(id).orElse(null);
         return mapper.domainToDTO(customer);
     }
 
     @Override
-    //@Cacheable(value = "customercpf", key = "#cpf")
+    @Cacheable(value = "customercpf", key = "#cpf")
     public CustomerDTO findCustomerByCpf(String cpf) {
         var customer = customerRepository.findByCpf(cpf).orElse(null);
         return mapper.domainToDTO(customer);
     }
 
     @Override
-    /*@Caching(evict = {
+    @Caching(evict = {
             @CacheEvict(cacheNames = "customer", key = "#id", beforeInvocation = true),
             @CacheEvict(cacheNames = "customercpf", key = "@customerSpelHelper.getCpfById(#id)", beforeInvocation = true)
-    })*/
+    })
     public void disableCustomerById(Long id) {
         customerRepository.deleteById(id);
     }
